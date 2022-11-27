@@ -1,0 +1,18 @@
+.container{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.babyCtn {
+  width: fit-content;
+  margin: 7px;
+}
+.boy{
+  background-color: rgb(107, 107, 250);
+  padding: 5px;
+}
+
+.girl{
+  background-color: pink;
+  padding: 5px;
+}

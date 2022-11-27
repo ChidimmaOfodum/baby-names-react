@@ -3,9 +3,13 @@ import babyNames from './data/babyNamesData'
 
 function BabyNames() {
   return (
-    <div>
+    <div className='container'>
     { babyNames.map((name) => {
-        return <p>{name.name}</p>
+        return (
+          <div className='babyCtn'>
+            <p className={name.sex === "f" ? "girl" : "boy"}>{name.name}</p>
+          </div>
+        );
     })}
     </div>
   )
