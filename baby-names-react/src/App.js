@@ -5,36 +5,24 @@ import React, { useState } from "react";
 import Button from "./Button";
 
 function App() {
-  const [input, setInput] = useState(babyData);
-  const [, setClickFemale] = useState()
-  const [, setClickMale] = useState()
+  const [gender, setGender] = useState(babyData)
+ 
 
-  function handleInput(event) {
-    let input = event.target.value.toLowerCase();
-    let filteredData = babyData.filter((name) =>
-      name.name.toLowerCase().includes(input)
-    );
-    setInput(filteredData);
-  }
-
-  function handleClickFemale(){
-    let test = babyData.filter((name) => name.sex === "f")
-    setClickFemale(test)
-    setInput(test)
-  }
-
-   function handleClickMale() {
-     let test = babyData.filter((name) => name.sex === "m");
-     setClickMale(test);
-     setInput(test);
+   function handleGender(event) {
+    if(event.currentTarget.className === "boy") setGender(babyData.filter((name) => name.sex === "m"));
+    else if(event.currentTarget.className === "girl") setGender(babyData.filter((name) => name.sex === "f"));
+    else (setGender(babyData))
    }
+
+ 
+
   return (
     <div className="App">
-      <input type="search" onChange={handleInput} />
-      <Button />
-      <Button color="girl" onClick = {handleClickFemale}/>
-      <Button color="boy" onClick = {handleClickMale} />
-      <BabyNames babyNamesData={input} />
+      <input type="search" />
+      <Button onClick = {handleGender}/>
+      <Button color="girl" onClick = {handleGender}/>
+      <Button color="boy" onClick = {handleGender} />
+      <BabyNames namesDisplay={gender} />
     </div>
   );
 }
