@@ -1,4 +1,4 @@
- const babyNames = [
+ const babyData= [
   {
     id: 0,
     name: "Zahra",
@@ -856,4 +856,4 @@
   },
 ];
 
-export default babyNames;
+export default babyData;

@@ -1,10 +1,10 @@
 import React from 'react'
 import babyNames from './data/babyNamesData'
 
-function BabyNames() {
+function BabyNames(prop) {
   return (
     <div className='container'>
-    { babyNames.map((name) => {
+    { prop.babyNamesData.map((name) => {
         return (
           <div className='babyCtn'>
             <p className={name.sex === "f" ? "girl" : "boy"}>{name.name}</p>
