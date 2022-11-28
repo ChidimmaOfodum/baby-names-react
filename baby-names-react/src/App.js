@@ -6,7 +6,8 @@ import Button from "./Button";
 
 function App() {
   const [input, setInput] = useState(babyData);
-  const [clickFemale, setClickFemale] = useState()
+  const [, setClickFemale] = useState()
+  const [, setClickMale] = useState()
 
   function handleInput(event) {
     let input = event.target.value.toLowerCase();
@@ -21,12 +22,18 @@ function App() {
     setClickFemale(test)
     setInput(test)
   }
+
+   function handleClickMale() {
+     let test = babyData.filter((name) => name.sex === "m");
+     setClickMale(test);
+     setInput(test);
+   }
   return (
     <div className="App">
       <input type="search" onChange={handleInput} />
       <Button />
       <Button color="girl" onClick = {handleClickFemale}/>
-      <Button color="boy" />
+      <Button color="boy" onClick = {handleClickMale} />
       <BabyNames babyNamesData={input} />
     </div>
   );
