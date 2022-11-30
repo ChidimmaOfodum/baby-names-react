@@ -28,7 +28,7 @@ function App() {
       setGender(test)
     }
 
-     if (data === "Female") {
+     else if (data === "Female") {
        let Female = babyData.filter((name) => name.sex === "f");
        let test = Female.filter((name) => name.name.includes(event.target.value));
        setGender(test);
